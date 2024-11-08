@@ -1,23 +1,261 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mini-Mercado Santos</title>
-    </head>
-    <body>
-        <header>
-            <img src="./img/carrinho.png"  width="50" height="50">Mini-Mercado Santos</img>
-            <h3><a href="/">Inicio</a></h3>
-            <h3><a href="/frutas-e-verduras">Frutas e verduras</a></h3>
-            <h3><a href="/alimentos-nao-pereciveis">Produtos alimentícios não perecíveis</a></h3>
-            <h3><a href="/higiene-e-limpeza">Produtos de higiene e limpeza</a></h3>
-        </header>
-        <main>
-            <h2> conteudo </h2>
-        </main>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Mercado Santos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav li {
+            display: inline;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            display: inline-block;
+        }
+
+        nav img {
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 30px;
+            /* Ajusta a largura da imagem */
+            height: 30px;
+            /* Ajusta a altura da imagem */
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.5em;
+            /* Tamanho um pouco menor */
+            color: white;
+            cursor: pointer;
+            margin-right: 10px;
+            /* Espaçamento à direita do ícone */
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav li {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        section {
+            padding: 80px 20px 20px;
+            text-align: center;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            margin-top: 20px;
+            /* Espaçamento menor */
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            flex: 1 0 200px;
+        }
+
+        .card img {
+            height: 100px;
+            width: 100px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            margin-bottom: 5px;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            clear: both;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i> <img src="./img/checkout.png"
+            alt="Carrinho de Compras">
+        <ul>
+            <li><a href="#">Mini-Mercado Santos</a></li>
+            <li><a href="#">Início</a></li>
+            <li><a href="#frutas-e-verduras">Frutas e verduras</a></li>
+            <li><a href="#produtos-alimenticios-nao-pereciveis">Produtos alimentícios não perecíveis</a></li>
+            <li><a href="#produtos-de-higiene-e-limpeza">Produtos de higiene e limpeza</a></li>
+            <li><a href="#servico">Serviços oferecidos</a></li>
+        </ul>
+    </nav>
+
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            menu.classList.toggle("show");
+        }
+    </script>
+
+    <section id="frutas-e-verduras">
+        <h1>Frutas e Verduras</h1>
+        <div class="card-container">
+            <div class="card">
+                <img src="./img/banana.jpg" alt="Imagem do Card"></img>
+                <h2>Banana prata</h2>
+                <p>R$5,00 kg </p>
+            </div>
+            <div class="card">
+                <img src="./img/morango.jpg" alt="Imagem do Card">
+                <h2>Morango</h2>
+                <p>R$8,00 bandeja</p>
+            </div>
+            <div class="card">
+                <img src="./img/uva.jpg" alt="Imagem do Card">
+                <h2>Uva verde</h2>
+                <p>R$15,00 caixa</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos-alimenticios-nao-pereciveis">
+        <h1>Produtos alimenticios não perecíveis</h1>
+        <div class="card-container">
+            <div class="card">
+                <img src="./img/cafe.jpg" alt="Imagem do Card">
+                <h2>Café Melitta</h2>
+                <p>R$10,00 500g</p>
+            </div>
+            <div class="card">
+                <img src="./img/acucar.jpg" alt="Imagem do Card">
+                <h2>Açúcar União</h2>
+                <p>R$8,00 kg</p>
+            </div>
+            <div class="card">
+                <img src="./img/arroz.png" alt="Imagem do Card">
+                <h2>Arroz Namorado</h2>
+                <p>R$17,00 kg</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos-de-higiene-e-limpeza">
+        <h1>Produtos de higiene e limpeza</h1>
+        <div class="card-container">
+            <div class="card">
+                <img src="./img/papel.jpg" alt="Imagem do Card">
+                <h2>Papel Higienico Neve</h2>
+                <p>R$15,00 pacote com 4 rolos</p>
+            </div>
+            <div class="card">
+                <img src="./img/pasta.jpg" alt="Imagem do Card">
+                <h2>Pasta de dente Colgate</h2>
+                <p>R$17,00 tubo</p>
+            </div>
+            <div class="card">
+                <img src="./img/fio.jpg" alt="Imagem do Card">
+                <h2>Fio dental Colgate</h2>
+                <p>R$10,00 caixa</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servico">
+        <h1>Serviços oferecidos</h1>
+        <div class="card-container">
+            <div class="card">
+                <img src="./img/mapa.jpg" alt="Imagem do Card">
+                <h2>Retirada no local</h2>
+                <p>Faça um pedido no site e retire na loja</p>
+            </div>
+            <div class="card">
+                <img src="./img/tele.png" alt="Imagem do Card">
+                <h2>Tele-entrega</h2>
+                <p>Faça um pedido no site e receba na sua casa</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <h4>teste footer</h4>
+        <p>© 2023 Mini-Mercado Santos. Todos os direitos reservados.</p>
+        <p> Telefone de contato: (51) 99888-2233</p>
+        <p><a href="#">Subir ao topo</a> </p>
     </footer>
+
+</body>
+
 </html>
