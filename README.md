@@ -1,3 +1,3 @@
 # site-mini-mercado
 
-Para acessar no github pages: https://nicolesi98.github.io/site-mini-mercado
+Para acessar o sistema do mini-mercado o mesmo está hospedado em: https://site-mini-mercado.vercel.app
